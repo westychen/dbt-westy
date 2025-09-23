@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: databricks_uc_sources
+    database: flipp_data_prod # Databricks catalog
+    schema: gold_facts # Databricks schema
+    
+    tables:
+      - name: facts_nativex_flyers # Table name
