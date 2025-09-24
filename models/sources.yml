@@ -1,9 +1,18 @@
 version: 2
 
 sources:
-  - name: databricks_uc_sources
-    database: flipp_data_prod # Databricks catalog
-    schema: gold_facts # Databricks schema
+  - name: databricks_uc_sources_facts 
+    database: flipp_data_prod
+    schema: gold_facts
+    tables:
+      - name: facts_nativex_flyers
+
+  - name: databricks_uc_sources_dimensions
+    database: flipp_data_prod
+    schema: gold_dimensions
     
     tables:
-      - name: facts_nativex_flyers # Table name
+      - name: geo_codes_fsa_global
+        tests:
+          - dbt_utils.unique_combination_of_columns:
+              combination_of_columns: ["fsa", "country_code"]
