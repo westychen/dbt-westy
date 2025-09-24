@@ -1,6 +1,6 @@
 /*
-  This test checks if the max date in the table is exactly today's date.
-  If the max date is not today, the query returns a row and the test fails.
+  This test checks if the max date in the table is exactly yesterday's date.
+  If the max date is not yesterday, the query returns a row and the test fails.
 */
 
 select *
