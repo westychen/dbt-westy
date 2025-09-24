@@ -16,3 +16,13 @@ sources:
         tests:
           - dbt_utils.unique_combination_of_columns:
               combination_of_columns: ["fsa", "country_code"]
+
+  - name: databricks_uc_sources_bronze_pp
+    database: flipp_data_prod
+    schema: bronze_partner_portal
+  
+    tables:
+      - name: nativex_partner_cpm
+        tests:
+          - dbt_utils.unique_combination_of_columns:
+              combination_of_columns: ["date", "device", "site_id"]
